@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2021 Carson Black <uhhadd@gmail.com>
+#
+# SPDX-License-Identifier: LGPL-2.0-or-later
+
 cmake_minimum_required(VERSION 3.5)
 
 # version and project boilerplate

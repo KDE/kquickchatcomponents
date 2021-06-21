@@ -1,3 +1,6 @@
+<!-- 
+    SPDX-FileCopyrightText: None
+-->
 <RCC>
     <qresource prefix="/">
         <file alias="qmldir">controls/qmldir</file>
