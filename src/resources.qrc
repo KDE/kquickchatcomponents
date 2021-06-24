@@ -4,5 +4,6 @@
 <RCC>
     <qresource prefix="/">
         <file alias="qmldir">controls/qmldir</file>
+        <file alias="ChatBubble.qml">controls/ChatBubble.qml</file>
     </qresource>
 </RCC>
