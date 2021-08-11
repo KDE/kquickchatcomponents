@@ -7,5 +7,6 @@ classname KQuickChatComponentsPlugin
 
 ChatBubble 1.0 ChatBubble.qml
 BubbleControl 1.0 BubbleControl.qml
+TextBubble 1.0 TextBubble.qml
 
 typeinfo plugins.qmltypes

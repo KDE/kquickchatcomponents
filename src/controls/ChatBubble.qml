@@ -16,6 +16,7 @@ Item {
     property int tailDirection: ChatBubble.TailDirection.FromLeft
 
     property alias inlineFooterContent: _row.data
+    property alias inlineFooter: _row
 
     enum TailDirection {
         FromLeft,
@@ -103,7 +104,6 @@ Item {
         id: _row
         spacing: 2
 
-        LayoutMirroring.enabled: backgroundRoot.tailDirection === ChatBubble.TailDirection.FromRight
         anchors {
             bottom: parent.bottom
             right: mainBG.right
