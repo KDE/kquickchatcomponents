@@ -13,13 +13,22 @@ Item {
 
     required property bool tailVisible
     required property int tailSize
+    property int tailDirection: ChatBubble.TailDirection.FromLeft
 
-    clip: true
+    property alias inlineFooterContent: _row.data
+
+    enum TailDirection {
+        FromLeft,
+        FromRight
+    }
 
     Item {
         id: tailBase
         clip: true
         visible: false
+
+        LayoutMirroring.enabled: backgroundRoot.tailDirection === ChatBubble.TailDirection.FromRight
+        LayoutMirroring.childrenInherit: true
 
         anchors {
             top: parent.top
@@ -42,6 +51,9 @@ Item {
         clip: true
         visible: false
 
+        LayoutMirroring.enabled: backgroundRoot.tailDirection === ChatBubble.TailDirection.FromRight
+        LayoutMirroring.childrenInherit: true
+
         anchors {
             top: parent.top
             bottom: parent.bottom
@@ -51,7 +63,9 @@ Item {
             right: mainBG.left
         }
         Kirigami.ShadowedRectangle {
-            anchors.fill: parent
+            anchors.top: parent.top
+            anchors.bottom: parent.bottom
+            anchors.right: parent.right
             anchors.rightMargin: backgroundRoot.tailSize
 
             width: backgroundRoot.tailSize*3
@@ -60,8 +74,8 @@ Item {
             corners {
                 topLeftRadius: 0
                 topRightRadius: 0
-                bottomRightRadius: backgroundRoot.tailSize*10
-                bottomLeftRadius: 0
+                bottomRightRadius: (backgroundRoot.tailDirection === ChatBubble.TailDirection.FromRight) ? 0 : (backgroundRoot.tailSize*10)
+                bottomLeftRadius: (backgroundRoot.tailDirection === ChatBubble.TailDirection.FromRight) ? (backgroundRoot.tailSize*10) : 0
             }
         }
     }
@@ -83,5 +97,27 @@ Item {
         color: Kirigami.Theme.backgroundColor
         anchors.fill: parent
         anchors.leftMargin: backgroundRoot.tailSize
+        LayoutMirroring.enabled: backgroundRoot.tailDirection === ChatBubble.TailDirection.FromRight
+    }
+    Row {
+        id: _row
+        spacing: 2
+
+        LayoutMirroring.enabled: backgroundRoot.tailDirection === ChatBubble.TailDirection.FromRight
+        anchors {
+            bottom: parent.bottom
+            right: mainBG.right
+            margins: Kirigami.Units.smallSpacing
+            rightMargin: Kirigami.Units.largeSpacing+2
+        }
+    }
+    layer.enabled: true
+    layer.effect: DropShadow {
+        cached: true
+        horizontalOffset: 0
+        verticalOffset: 1
+        radius: 2.0
+        samples: 17
+        color: "#30000000"
     }
 }
