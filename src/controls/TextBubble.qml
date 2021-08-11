@@ -1,6 +1,6 @@
 // SPDX-FileCopyrightText: 2021 Carson Black <uhhadd@gmail.com>
 //
-// SPDX-License-Identifier: GPL-3.0-or-later
+// SPDX-License-Identifier: LGPL-2.0-or-later
 
 import QtQuick 2.15
 import QtQuick.Layouts 1.10

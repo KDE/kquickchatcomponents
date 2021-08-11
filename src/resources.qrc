@@ -1,6 +1,10 @@
-<!-- 
-    SPDX-FileCopyrightText: None
+<!--
+SPDX-FileCopyrightText: 2021 None
+SPDX-FileCopyrightText: None
+
+SPDX-License-Identifier: CC0-1.0
 -->
+
 <RCC>
     <qresource prefix="/">
         <file alias="qmldir">controls/qmldir</file>
