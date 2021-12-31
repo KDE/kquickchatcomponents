@@ -14,6 +14,7 @@ Item {
     required property bool tailVisible
     required property int tailSize
     property int tailDirection: ChatBubble.TailDirection.FromLeft
+    property int radius: 4
 
     property alias inlineFooterContent: _row.data
     property alias inlineFooter: _row
@@ -90,10 +91,10 @@ Item {
     Kirigami.ShadowedRectangle {
         id: mainBG
         corners {
-            topLeftRadius: 4
-            topRightRadius: 4
-            bottomRightRadius: 4
-            bottomLeftRadius: 4
+            topLeftRadius: backgroundRoot.radius
+            topRightRadius: backgroundRoot.radius
+            bottomRightRadius: backgroundRoot.radius
+            bottomLeftRadius: backgroundRoot.radius
         }
         color: Kirigami.Theme.backgroundColor
         anchors.fill: parent

@@ -11,10 +11,6 @@ Kirigami.ApplicationWindow {
     visible: true
     id: messagesViewRoot
 
-    background: Rectangle {
-        color: "white"
-    }
-
     component MessageBubble : KQCC.BubbleControl {
         id: bubble
 
@@ -38,5 +34,21 @@ Kirigami.ApplicationWindow {
             isOwnMessage: false
             fromLeft: false
         }
+        MessageBubble { text: "0"; bubble.radius: 0; isOwnMessage: false; fromLeft: false }
+        MessageBubble { text: "1"; bubble.radius: 1; isOwnMessage: false; fromLeft: false }
+        MessageBubble { text: "2"; bubble.radius: 2; isOwnMessage: false; fromLeft: false }
+        MessageBubble { text: "3"; bubble.radius: 3; isOwnMessage: false; fromLeft: false }
+        MessageBubble { text: "4"; bubble.radius: 4; isOwnMessage: false; fromLeft: false }
+        MessageBubble { text: "5"; bubble.radius: 5; isOwnMessage: false; fromLeft: false }
+        MessageBubble { text: "6"; bubble.radius: 6; isOwnMessage: false; fromLeft: false }
+        MessageBubble { text: "7"; bubble.radius: 7; isOwnMessage: false; fromLeft: false }
+        MessageBubble { text: "8"; bubble.radius: 8; isOwnMessage: false; fromLeft: false }
+        MessageBubble { text: "8"; bubble.radius: 8; isOwnMessage: false; fromLeft: false }
+        MessageBubble { text: "9"; bubble.radius: 9; isOwnMessage: false; fromLeft: false }
+        MessageBubble { text: "10"; bubble.radius: 10; isOwnMessage: false; fromLeft: false }
+        MessageBubble { text: "11"; bubble.radius: 11; isOwnMessage: false; fromLeft: false }
+        MessageBubble { text: "12"; bubble.radius: 12; isOwnMessage: false; fromLeft: false }
+        MessageBubble { text: "13"; bubble.radius: 13; isOwnMessage: false; fromLeft: false }
+        MessageBubble { text: "14"; bubble.radius: 14; isOwnMessage: false; fromLeft: false }
     }
 }
