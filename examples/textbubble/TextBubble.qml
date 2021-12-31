@@ -47,12 +47,9 @@ Kirigami.ApplicationWindow {
             fromLeft: false
 
             bubble.inlineFooterContent: [
-                QQC2.Label {
-                    text: "19:13"
-                    opacity: 0.5
-
-                    font.pointSize: -1
-                    font.pixelSize: Kirigami.Units.gridUnit * (2/3)
+                KQCC.Timestamp {
+                    date: new Date() // now
+                    edited: true
                 }
             ]
         }
@@ -62,12 +59,9 @@ Kirigami.ApplicationWindow {
             fromLeft: false
 
             bubble.inlineFooterContent: [
-                QQC2.Label {
-                    text: "19:13"
-                    opacity: 0.5
-
-                    font.pointSize: -1
-                    font.pixelSize: Kirigami.Units.gridUnit * (2/3)
+                KQCC.Timestamp {
+                    icon: "clock"
+                    date: new Date() // now
                 }
             ]
         }

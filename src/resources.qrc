@@ -11,5 +11,6 @@ SPDX-License-Identifier: CC0-1.0
         <file alias="ChatBubble.qml">controls/ChatBubble.qml</file>
         <file alias="BubbleControl.qml">controls/BubbleControl.qml</file>
         <file alias="TextBubble.qml">controls/TextBubble.qml</file>
+        <file alias="Timestamp.qml">controls/Timestamp.qml</file>
     </qresource>
 </RCC>
