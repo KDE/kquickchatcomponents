@@ -22,7 +22,7 @@ Kirigami.ApplicationWindow {
         KQCC.TextBubble {
             before: [
                 Kirigami.Heading {
-                    text: "author"
+                    text: KQCC.StandardChatShortcuts.quickSwitcher
                     level: 4
                 }
             ]

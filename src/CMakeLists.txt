@@ -6,6 +6,7 @@ set(
     KQCC_SOURCES
 
     kquickchatcomponentsplugin.cpp
+    standardshortcuts.cpp
     resources.qrc
 
     ${kquickimageeditor_QM_LOADER}

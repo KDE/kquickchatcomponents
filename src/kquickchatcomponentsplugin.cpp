@@ -6,6 +6,7 @@
 #include <QResource>
 
 #include "kquickchatcomponentsplugin.h"
+#include "standardshortcuts.h"
 
 void KQuickChatComponentsPlugin::registerTypes(const char *uri)
 {
@@ -16,6 +17,11 @@ void KQuickChatComponentsPlugin::registerTypes(const char *uri)
 #endif
 
     qmlRegisterModule(uri, 1, 0);
+
+    qRegisterMetaType<StandardChatShortcuts*>();
+    qmlRegisterSingletonType<StandardChatShortcuts>(
+        uri, 1, 0, "StandardChatShortcuts",
+        [](QQmlEngine *, QJSEngine *) -> QObject* { return new StandardChatShortcuts; });
 
     qmlProtectModule(uri, 1);
 }
