@@ -8,18 +8,43 @@ import QtGraphicalEffects 1.15
 import QtQuick.Controls 2.12 as QQC2
 import org.kde.kirigami 2.14 as Kirigami
 
+/**
+ * The raw bubble shape used in chat apps as a plain Item.
+ * If you're looking for a high-level component, check out
+ * the BubbleControl.
+ */
 Item {
     id: backgroundRoot
 
+    /**
+     * Whether or not the tail of the chat bubble is visible.
+     */
     required property bool tailVisible
+    /**
+     * How large the tail is.
+     */
     required property int tailSize
+    /**
+     * Which direction the tail comes from: if it comes
+     * from the left edge of the bubble, or the right edge.
+     */
     property int tailDirection: ChatBubble.TailDirection.FromLeft
+    /**
+     * How rounded the bubble is.
+     */
     property int radius: 4
-
+    /**
+     * A Row placed in the bottom corner of the background.
+     */
     property alias inlineFooter: _row
 
+    /**
+     * The directions the tail can come from.
+     */
     enum TailDirection {
+        /** From the left edge of the bubble. */
         FromLeft,
+        /** From the right edge of the bubble. */
         FromRight
     }
 

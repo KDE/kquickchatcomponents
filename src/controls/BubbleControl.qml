@@ -7,11 +7,31 @@ import QtQuick.Layouts 1.10
 import QtQuick.Controls 2.12 as QQC2
 import org.kde.kirigami 2.14 as Kirigami
 
+/**
+ * A QtQuick.Controls.Control subclass wrapping the raw ChatBubble
+ * as a background, allowing you to provide a contentItem that
+ * gets fitted into the bubble.
+ */
 QQC2.Control {
     id: bubble
 
+    /**
+     * Whether or not this is a message from the user using the app.
+     * A visual treatment will be applied indicating that this
+     * is the case.
+     */
     required property bool isOwnMessage
+
+    /**
+     * Whether or not the message's tail should go from the left.
+     * By default, the message's tail always from the right,
+     * regardless of right-to-left or other similar conditions.
+     */
     required property bool fromLeft
+
+    /**
+     * The ChatBubble providing the background for this control.
+     */
     property alias bubble: bubbleBG
 
     topPadding: Kirigami.Units.largeSpacing

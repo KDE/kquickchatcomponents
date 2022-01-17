@@ -10,9 +10,15 @@ import org.kde.kirigami 2.14 as Kirigami
 import org.kde.kquickchatcomponents 1.0 as KQCC
 import org.kde.kquickchatcomponents.private 1.0 as Private
 
+/**
+ * A BubbleControl displaying text.
+ */
 BubbleControl {
     id: bubble
 
+    /**
+     * The text displayed by the control.
+     */
     required property string text
 
     // QML doesn't let us set such a nested thing as a binding
@@ -22,9 +28,25 @@ BubbleControl {
         this.bubble.inlineFooter.LayoutMirroring.enabled = Private.Utilities.isRTL(this.text)
     }
 
+    /**
+     * The TextEdit used to display the text.
+     */
     property alias textEdit: tEdit
+
+    /**
+     * Items that should be placed before the text.
+     */
     property alias before: before.data
+
+    /**
+     * Items that should be placed after the text.
+     */
     property alias after: after.data
+
+    /**
+     * Whether the control should automatically mirror
+     * the bubble's inline footer to dodge the text.
+     */
     property bool mirrorInlineFooter: true
 
     QQC2.Label {
