@@ -23,7 +23,7 @@ BubbleControl {
     contentItem: ColumnLayout {
         id: col
 
-        readonly property string textPadding: " ".repeat(Math.ceil(bubble.bubble.inlineFooter.width / dummy.implicitWidth)) + "⠀"
+        readonly property string textPadding: " ".repeat(Math.ceil(bubble.bubble.inlineFooter.implicitWidth / dummy.implicitWidth)) + "⠀"
 
         ColumnLayout { id: before; visible: implicitHeight > 0; Layout.fillWidth: true }
 

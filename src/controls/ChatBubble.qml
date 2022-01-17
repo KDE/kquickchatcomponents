@@ -16,7 +16,6 @@ Item {
     property int tailDirection: ChatBubble.TailDirection.FromLeft
     property int radius: 4
 
-    property alias inlineFooterContent: _row.data
     property alias inlineFooter: _row
 
     enum TailDirection {

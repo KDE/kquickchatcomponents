@@ -46,7 +46,7 @@ Kirigami.ApplicationWindow {
             isOwnMessage: false
             fromLeft: false
 
-            bubble.inlineFooterContent: [
+            bubble.inlineFooter.data: [
                 KQCC.Timestamp {
                     date: new Date() // now
                     edited: true
@@ -58,7 +58,7 @@ Kirigami.ApplicationWindow {
             isOwnMessage: false
             fromLeft: false
 
-            bubble.inlineFooterContent: [
+            bubble.inlineFooter.data: [
                 KQCC.Timestamp {
                     icon: "clock"
                     date: new Date() // now

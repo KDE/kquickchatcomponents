@@ -27,7 +27,7 @@ Row {
         return time
     }
 
-    spacing: Kirigami.Units.smallSpacing / 2
+    spacing: Math.round(Kirigami.Units.smallSpacing / 2)
 
     Kirigami.Icon {
         width: 16
@@ -43,7 +43,7 @@ Row {
 
         opacity: 0.5
         font.pointSize: -1
-        font.pixelSize: Kirigami.Units.gridUnit * (2/3)
+        font.pixelSize: Math.round(Kirigami.Units.gridUnit * (2/3))
     }
 
     HoverHandler {
