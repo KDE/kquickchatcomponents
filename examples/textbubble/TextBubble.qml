@@ -54,6 +54,15 @@ Kirigami.ApplicationWindow {
             ]
         }
         KQCC.TextBubble {
+            text: "مرحبا بالعالم"
+            bubble.inlineFooter.data: [
+                KQCC.Timestamp {
+                    date: new Date() // now
+                    edited: true
+                }
+            ]
+        }
+        KQCC.TextBubble {
             text: "look at how i deal with the\ntimestamp"
             isOwnMessage: false
             fromLeft: false

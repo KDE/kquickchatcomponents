@@ -7,13 +7,25 @@ import QtQuick.Layouts 1.10
 import QtQuick.Controls 2.12 as QQC2
 import org.kde.kirigami 2.14 as Kirigami
 
+import org.kde.kquickchatcomponents 1.0 as KQCC
+import org.kde.kquickchatcomponents.private 1.0 as Private
+
 BubbleControl {
     id: bubble
 
     required property string text
+
+    // QML doesn't let us set such a nested thing as a binding
+    // (neither syntactic nor Binding object)
+    // so we need to manually update this property ourselves.
+    onTextChanged: if (mirrorInlineFooter) {
+        this.bubble.inlineFooter.LayoutMirroring.enabled = Private.Utilities.isRTL(this.text)
+    }
+
     property alias textEdit: tEdit
     property alias before: before.data
     property alias after: after.data
+    property bool mirrorInlineFooter: true
 
     QQC2.Label {
         id: dummy

@@ -6,6 +6,7 @@
 #include <QResource>
 
 #include "kquickchatcomponentsplugin.h"
+#include "utilities.h"
 
 void KQuickChatComponentsPlugin::registerTypes(const char *uri)
 {
@@ -16,6 +17,13 @@ void KQuickChatComponentsPlugin::registerTypes(const char *uri)
 #endif
 
     qmlRegisterModule(uri, 1, 0);
+
+    qRegisterMetaType<KQCCUtilities*>();
+    qmlRegisterSingletonType<KQCCUtilities>(
+        "org.kde.kquickchatcomponents.private",
+        1, 0, "Utilities",
+        [](QQmlEngine*,QJSEngine*) -> QObject*
+            { return new KQCCUtilities; });
 
     qmlProtectModule(uri, 1);
 }
